@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1217022521483323941}
   - component: {fileID: 1217022521483323940}
   - component: {fileID: 1217022521483323939}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,6 +101,7 @@ MonoBehaviour:
   theRB: {fileID: 1217022521483323939}
   bulletEffect: {fileID: 12647054948828504, guid: dbfb704e3f417134d80e6647bb5f07b0,
     type: 3}
+  damgeToDeal: 50
 --- !u!61 &1217022521483323940
 BoxCollider2D:
   m_ObjectHideFlags: 0

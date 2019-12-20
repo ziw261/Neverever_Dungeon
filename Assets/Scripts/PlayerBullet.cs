@@ -8,6 +8,9 @@ public class PlayerBullet : MonoBehaviour {
     public float speed = 7.5f;
     public Rigidbody2D theRB;
     public GameObject bulletEffect;
+    public int damgeToDeal = 50;
+    
+    
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +26,10 @@ public class PlayerBullet : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         Instantiate(bulletEffect, transform.position, transform.rotation);
         Destroy(gameObject);
+
+        if (other.CompareTag("Enemy")) {
+            other.GetComponent<EnemyController>().DamageEnemy(damgeToDeal);
+        }
     }
 
 

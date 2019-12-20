@@ -5,6 +5,8 @@ using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+
+    public static PlayerController Instance;
     
     public float moveSpeed = 5f;
     private Vector2 _moveInput;
@@ -22,10 +24,17 @@ public class PlayerController : MonoBehaviour {
 
     public float timeBetweenShots;
     private float _shotCounter;
+
+
+    void Awake() {
+        Instance = this;
+    }    
+    
     
     // Start is called before the first frame update
     void Start() {
         _theCam = Camera.main;
+       
     }
 
     // Update is called once per frame
