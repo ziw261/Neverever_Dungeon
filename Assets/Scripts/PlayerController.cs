@@ -25,7 +25,14 @@ public class PlayerController : MonoBehaviour {
     public float timeBetweenShots;
     private float _shotCounter;
 
+    public SpriteRenderer bodySpriteRenderer;
 
+    private float _activeMoveSpeed;
+
+    public float dashSpeed = 8f, dashLength = .5f, dashCooldown = 1f, dashInvincibility = .5f;
+
+    private float _dashCounter, _dashCoolCounter;
+    
     void Awake() {
         Instance = this;
     }    
@@ -34,7 +41,8 @@ public class PlayerController : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         _theCam = Camera.main;
-       
+        _activeMoveSpeed = moveSpeed;
+
     }
 
     // Update is called once per frame
@@ -48,7 +56,7 @@ public class PlayerController : MonoBehaviour {
         
         //transform.position += new Vector3(_moveInput.x * Time.deltaTime * moveSpeed, _moveInput.y * Time.deltaTime * moveSpeed, 0f);
 
-        theRb.velocity = _moveInput * moveSpeed;
+        theRb.velocity = _moveInput * _activeMoveSpeed;
 
         // Calculate direction
         Vector3 mousePos = Input.mousePosition;
@@ -81,6 +89,30 @@ public class PlayerController : MonoBehaviour {
             }
         }
         
+        // Dash Logic
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            if (_dashCoolCounter <= 0 && _dashCounter <= 0) {
+                _activeMoveSpeed = dashSpeed;
+                _dashCounter = dashLength;
+                
+                anim.SetTrigger("dash");
+                
+                PlayerHealthController.Instance.MakeInvincible(dashInvincibility);
+            }
+        }
+
+        if (_dashCounter > 0) {
+            _dashCounter -= Time.deltaTime;
+            if (_dashCounter <= 0) {
+                _activeMoveSpeed = moveSpeed;
+                _dashCoolCounter = dashCooldown;
+            }
+        }
+
+        if (_dashCoolCounter > 0) {
+            _dashCoolCounter -= Time.deltaTime;
+        }
+        
         
         // Animation
         if (_moveInput != Vector2.zero) {
@@ -88,5 +120,9 @@ public class PlayerController : MonoBehaviour {
         } else {
             anim.SetBool("isWalking", false);
         }
+    }
+
+    public float GetDashCounter() {
+        return _dashCounter;
     }
 }

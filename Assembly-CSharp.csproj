@@ -56,10 +56,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Breakables.cs" />
+     <Compile Include="Assets\Scripts\BrokenPieces.cs" />
+     <Compile Include="Assets\Scripts\DamagePlayer.cs" />
      <Compile Include="Assets\Scripts\EnemyBullet.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\HealthPickup.cs" />
      <Compile Include="Assets\Scripts\PlayerBullet.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PlayerHealthController.cs" />
+     <Compile Include="Assets\Scripts\SpriteSortOrder.cs" />
+     <Compile Include="Assets\Scripts\UIController.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/GitHub/RougeLike/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

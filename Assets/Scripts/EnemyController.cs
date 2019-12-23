@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour  {
     // Update is called once per frame
     void Update() {
 
-        if (theBody.isVisible) {
+        if (theBody.isVisible && PlayerController.Instance.gameObject.activeInHierarchy) {
             
             // Moving logic
             if (Vector3.Distance(transform.position, PlayerController.Instance.transform.position) <
@@ -71,6 +71,8 @@ public class EnemyController : MonoBehaviour  {
                     Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
                 }
             }
+        } else {
+            theRb.velocity = Vector2.zero;
         }
 
 
