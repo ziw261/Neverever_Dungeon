@@ -42,7 +42,10 @@ public class Breakables : MonoBehaviour {
 
     private void BreakLogic() {
         Destroy(gameObject);
-                
+        
+        // Play SFX for box breaking
+        AudioManager.Instance.PlaySFX(0);
+        
         // Show broken pieces
         int piecesToDrop = Random.Range(1, maxPieces);
 

@@ -27,6 +27,8 @@ public class EnemyBullet : MonoBehaviour {
         }
         
         Destroy(gameObject);
+        AudioManager.Instance.PlaySFX(4);
+
     }
     
     private void OnBecameInvisible() {

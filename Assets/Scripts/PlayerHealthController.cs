@@ -40,6 +40,8 @@ public class PlayerHealthController : MonoBehaviour {
     public void DamagePlayer() {
 
         if (_invincCount <= 0) {
+            
+            AudioManager.Instance.PlaySFX(11);
 
             currentHealth--;
 
@@ -49,10 +51,17 @@ public class PlayerHealthController : MonoBehaviour {
             Color temp = PlayerController.Instance.bodySpriteRenderer.color;
             PlayerController.Instance.bodySpriteRenderer.color = new Color(temp.r, temp.g, temp.b, 0.5f);
             
+            
+            // Player died, game over
             if (currentHealth <= 0) {
                 PlayerController.Instance.gameObject.SetActive(false);
                 UIController.Instance.deathScreen.SetActive(true);
+                AudioManager.Instance.PlayGameOver();
+                AudioManager.Instance.PlaySFX(9);
+
             }
+
+            
 
             // UI for health bar
             UIController.Instance.healthSlider.value = currentHealth;

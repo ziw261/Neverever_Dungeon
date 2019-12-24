@@ -26,6 +26,9 @@ public class PlayerBullet : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         Instantiate(bulletEffect, transform.position, transform.rotation);
         Destroy(gameObject);
+        
+        AudioManager.Instance.PlaySFX(4);
+
 
         if (other.CompareTag("Enemy")) {
             other.GetComponent<EnemyController>().DamageEnemy(damgeToDeal);
