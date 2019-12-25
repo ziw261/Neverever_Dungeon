@@ -1,0 +1,1 @@
+Use Time.timeScale = 0f and Time.timeScale = 1f to reach a special TimeStop Ability.

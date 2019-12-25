@@ -15,12 +15,17 @@
           <e p="EnemyBullet.cs" t="Include" />
           <e p="EnemyController.cs" t="Include" />
           <e p="HealthPickup.cs" t="Include" />
+          <e p="LevelExit.cs" t="Include" />
+          <e p="LevelManager.cs" t="Include" />
+          <e p="MainMenu.cs" t="Include" />
+          <e p="Note.txt" t="Include" />
           <e p="PlayerBullet.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerHealthController.cs" t="Include" />
           <e p="Room.cs" t="Include" />
           <e p="SpriteSortOrder.cs" t="Include" />
           <e p="UIController.cs" t="Include" />
+          <e p="VictoryScreen.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
