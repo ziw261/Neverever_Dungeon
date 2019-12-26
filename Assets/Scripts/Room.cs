@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Room : MonoBehaviour {
 
-    public bool closeWhenEntered, openWhenEnemiesCleared;
+    public bool closeWhenEntered; // openWhenEnemiesCleared;
     
     
     public GameObject[] doors;
 
-    public List<GameObject> enemies = new List<GameObject>();
+    //public List<GameObject> enemies = new List<GameObject>();
 
     private bool _roomActive;
     
@@ -21,6 +21,8 @@ public class Room : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        
+        /*
         
         // The logic for room that door is gonna open when all enemies die
         if (enemies.Count > 0 && _roomActive && openWhenEnemiesCleared) {
@@ -33,11 +35,16 @@ public class Room : MonoBehaviour {
             }
 
             if (enemies.Count == 0) {
-                foreach (GameObject door in doors) {
-                    door.SetActive(false);
-                    closeWhenEntered = false;
-                }
+                
             }
+        }
+        */
+    }
+
+    public void OpenDoors() {
+        foreach (GameObject door in doors) {
+            door.SetActive(false);
+            closeWhenEntered = false;
         }
     }
 
@@ -62,5 +69,10 @@ public class Room : MonoBehaviour {
         if (other.CompareTag("Player")) {
             _roomActive = false;
         }
+    }
+
+
+    public bool IsRoomActive() {
+        return _roomActive;
     }
 }

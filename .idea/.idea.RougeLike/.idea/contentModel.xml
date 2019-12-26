@@ -16,6 +16,7 @@
           <e p="EnemyController.cs" t="Include" />
           <e p="HealthPickup.cs" t="Include" />
           <e p="LevelExit.cs" t="Include" />
+          <e p="LevelGenerator.cs" t="Include" />
           <e p="LevelManager.cs" t="Include" />
           <e p="MainMenu.cs" t="Include" />
           <e p="Note.txt" t="Include" />
@@ -23,6 +24,7 @@
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerHealthController.cs" t="Include" />
           <e p="Room.cs" t="Include" />
+          <e p="RoomCenter.cs" t="Include" />
           <e p="SpriteSortOrder.cs" t="Include" />
           <e p="UIController.cs" t="Include" />
           <e p="VictoryScreen.cs" t="Include" />
