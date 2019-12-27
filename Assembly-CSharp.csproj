@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\Breakables.cs" />
      <Compile Include="Assets\Scripts\BrokenPieces.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\CoinPickup.cs" />
      <Compile Include="Assets\Scripts\DamagePlayer.cs" />
      <Compile Include="Assets\Scripts\EnemyBullet.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
@@ -73,6 +74,7 @@
      <Compile Include="Assets\Scripts\PlayerHealthController.cs" />
      <Compile Include="Assets\Scripts\Room.cs" />
      <Compile Include="Assets\Scripts\RoomCenter.cs" />
+     <Compile Include="Assets\Scripts\ShopItem.cs" />
      <Compile Include="Assets\Scripts\SpriteSortOrder.cs" />
      <Compile Include="Assets\Scripts\UIController.cs" />
      <Compile Include="Assets\Scripts\VictoryScreen.cs" />

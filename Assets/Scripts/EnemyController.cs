@@ -4,35 +4,62 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour  {
 
-    public Rigidbody2D theRb;
-    public float moveSpeed = 3f;
-
+    [Header("Chase Player Variable")]
+    public bool shouldChasePlayer;
     public float rangeToChasePlayer = 7f;
     private Vector3 _moveDirection;
 
-    public Animator anim;
+    
+    [Header("Run Away Variable")]
+    public bool shouldRunAway;
+    public float runawayRange;
 
-    public int health = 150;
 
-    public GameObject[] deathSplatters;
-    public GameObject hitEffect;
+    [Header("Wander Variable")]
+    public bool shouldWander;
+    public float wanderLength, pauseLength;
+    private float _wanderCounter, _pauseCounter;
+    private Vector3 _wanderDirection;
 
+
+    [Header("Patrol Variable")]
+    public bool shouldPatrol;
+    public Transform[] patrolPoints;
+    private int _currentPatrolPoint;
+    
+    
+    [Header("Shooting Variable")]
     public bool shouldShoot;
-
     public GameObject bullet;
     public Transform firePoint;
     public float fireRate;
     private float _fireCounter;
-
-
-
     public float shootRange;
     
+    [Header("Item Drop Variable")]
+    public bool shouldDropItem;
+    public GameObject[] itemsToDrop;
+    public float itemDropPercent;
+    
+    
+    [Header("Basic Variables")]
+    public Animator anim;
+    public int health = 150;
+    public GameObject[] deathSplatters;
+    public GameObject hitEffect;
     public SpriteRenderer theBody;
+    public Rigidbody2D theRb;
+    public float moveSpeed = 3f;
+    
+    
+    
+    
     
     // Start is called before the first frame update
     void Start() {
-        
+        if (shouldWander) {
+            _pauseCounter = Random.Range(pauseLength * 0.75f, pauseLength * 1.25f);
+        }
     }
 
     // Update is called once per frame
@@ -40,14 +67,55 @@ public class EnemyController : MonoBehaviour  {
 
         if (theBody.isVisible && PlayerController.Instance.gameObject.activeInHierarchy) {
             
-            // Moving logic
+            // Moving logic - chase player
+            _moveDirection = Vector3.zero;
             if (Vector3.Distance(transform.position, PlayerController.Instance.transform.position) <
-                rangeToChasePlayer) {
+                rangeToChasePlayer && shouldChasePlayer) {
                 _moveDirection = PlayerController.Instance.transform.position - transform.position;
             } else {
-                _moveDirection = Vector3.zero;
+                if (shouldWander) {
+                    if (_wanderCounter > 0) {
+                        _wanderCounter -= Time.deltaTime;
+                        
+                        //move the enemy
+                        _moveDirection = _wanderDirection;
+                        
+                        if (_wanderCounter <= 0) {
+                            _pauseCounter = Random.Range(pauseLength * 0.75f, pauseLength * 1.25f);
+                        }
+                    }
+
+                    if (_pauseCounter > 0) {
+                        _pauseCounter -= Time.deltaTime;
+
+                        if (_pauseCounter < -0) {
+                            _wanderCounter = Random.Range(wanderLength * 0.75f, wanderLength * 1.25f);
+                            _wanderDirection = new Vector3(Random.Range(-1f,1f),Random.Range(-1f,1f), 0f);
+                        }
+                    }
+                }
+
+                if (shouldPatrol) {
+                    
+                    // Move towards to the next patrol points?
+                    _moveDirection = patrolPoints[_currentPatrolPoint].position - transform.position;
+
+                    if (Vector3.Distance(transform.position, patrolPoints[_currentPatrolPoint].position) < 0.2f) {
+                        _currentPatrolPoint++;
+                        if (_currentPatrolPoint >= patrolPoints.Length) {
+                            _currentPatrolPoint = 0;
+                        }
+                    }
+                }
             }
 
+            
+            // Moving logic - runaway from player
+            if (Vector3.Distance(transform.position, PlayerController.Instance.transform.position) <
+                runawayRange && shouldRunAway) {
+                _moveDirection = transform.position - PlayerController.Instance.transform.position;
+            }
+            
             _moveDirection.Normalize();
             
             // Fixed facing issue for enemies (default facing left)
@@ -106,6 +174,18 @@ public class EnemyController : MonoBehaviour  {
 
             int rotation = Random.Range(0, 4);
             Instantiate(deathSplatters[selectedSplatter], transform.position, Quaternion.Euler(0f,0f,rotation*90f));
+            
+            // Item drop logic
+            if (shouldDropItem) {
+                    
+                float dropChance = Random.Range(0f, 100f);
+                    
+                if (dropChance <= itemDropPercent) {
+                    int randomItem = Random.Range(0, itemsToDrop.Length);
+
+                    Instantiate(itemsToDrop[randomItem], transform.position, transform.rotation);
+                }
+            }
         }
     }
 }

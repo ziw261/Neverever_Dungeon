@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 public class LevelGenerator : MonoBehaviour {
 
     public GameObject layoutRoom;
-    public Color startColor, endColor;
+    public Color startColor, endColor, shopColor;
     
     public int distanceToEnd;
-
+    public bool includeShop;
+    public int minDistanceToShop, maxDistanceToShop;
+    
     public Transform generatorPoint;
 
     public enum Direction {
@@ -26,7 +28,7 @@ public class LevelGenerator : MonoBehaviour {
 
     public LayerMask roomLayerMask;
 
-    private GameObject _endRoom;
+    private GameObject _endRoom, _shopRoom;
     
     private List<GameObject> _layoutRoomObjects = new List<GameObject>();
 
@@ -34,7 +36,7 @@ public class LevelGenerator : MonoBehaviour {
     
     private List<GameObject> _generatedOutlines = new List<GameObject>();
 
-    public RoomCenter centerStart, centerEnd;
+    public RoomCenter centerStart, centerEnd, centerShop;
     public RoomCenter[] potentialCenters;
     
     // Start is called before the first frame update
@@ -67,6 +69,13 @@ public class LevelGenerator : MonoBehaviour {
                 MoveGenerationPoint();
             }
         }
+
+        if (includeShop) {
+            int shopSelector = Random.Range(minDistanceToShop, maxDistanceToShop + 1);
+            _shopRoom = _layoutRoomObjects[shopSelector];
+            _layoutRoomObjects.RemoveAt(shopSelector);
+            _shopRoom.GetComponent<SpriteRenderer>().color = shopColor;
+        }
         
         
         // Create room outlines
@@ -77,7 +86,9 @@ public class LevelGenerator : MonoBehaviour {
         }
         
         CreateRoomOutline(_endRoom.transform.position);
-        
+        if (includeShop) {
+            CreateRoomOutline(_shopRoom.transform.position);
+        }
         
         // Create room centers
         foreach (GameObject outline in _generatedOutlines) {
@@ -92,6 +103,13 @@ public class LevelGenerator : MonoBehaviour {
             if (outline.transform.position == _endRoom.transform.position) {
                 Instantiate(centerEnd, outline.transform.position, transform.rotation).theRoom = outline.GetComponent<Room>();
                 centerSetted = true;
+            }
+
+            if (includeShop) {
+                if (outline.transform.position == _shopRoom.transform.position) {
+                    Instantiate(centerShop, outline.transform.position, transform.rotation).theRoom = outline.GetComponent<Room>();
+                    centerSetted = true;
+                }
             }
 
             if (!centerSetted) {

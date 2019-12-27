@@ -1,1 +1,10 @@
 Use Time.timeScale = 0f and Time.timeScale = 1f to reach a special TimeStop Ability.
+
+Damge Player script for touch to damage, it could be used on bullets and also on specific enemy type
+
+When adding enemies to room centers, make sure to add them into enemy list in Room script.
+After making room centers, add them into level generator.
+
+For enemy fire don't forget to set patrol points
+
+When adding new objects, remember to set to the right sorting layer and layer interaction.

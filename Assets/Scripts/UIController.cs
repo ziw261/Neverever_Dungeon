@@ -12,6 +12,8 @@ public class UIController : MonoBehaviour {
     public Slider healthSlider;
     public Text heathText;
     public GameObject deathScreen;
+
+    public Text coinText;
     
     // Scene switch fade/not fade
     public Image fadeScreen;

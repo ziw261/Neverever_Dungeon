@@ -11,6 +11,7 @@
           <e p="Breakables.cs" t="Include" />
           <e p="BrokenPieces.cs" t="Include" />
           <e p="CameraController.cs" t="Include" />
+          <e p="CoinPickup.cs" t="Include" />
           <e p="DamagePlayer.cs" t="Include" />
           <e p="EnemyBullet.cs" t="Include" />
           <e p="EnemyController.cs" t="Include" />
@@ -25,6 +26,7 @@
           <e p="PlayerHealthController.cs" t="Include" />
           <e p="Room.cs" t="Include" />
           <e p="RoomCenter.cs" t="Include" />
+          <e p="ShopItem.cs" t="Include" />
           <e p="SpriteSortOrder.cs" t="Include" />
           <e p="UIController.cs" t="Include" />
           <e p="VictoryScreen.cs" t="Include" />
