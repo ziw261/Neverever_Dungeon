@@ -15,6 +15,9 @@
           <e p="DamagePlayer.cs" t="Include" />
           <e p="EnemyBullet.cs" t="Include" />
           <e p="EnemyController.cs" t="Include" />
+          <e p="Gun.cs" t="Include" />
+          <e p="GunChest.cs" t="Include" />
+          <e p="GunPickup.cs" t="Include" />
           <e p="HealthPickup.cs" t="Include" />
           <e p="LevelExit.cs" t="Include" />
           <e p="LevelGenerator.cs" t="Include" />

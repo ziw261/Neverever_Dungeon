@@ -7,11 +7,17 @@ using UnityEngine.SceneManagement;
 public class LevelGenerator : MonoBehaviour {
 
     public GameObject layoutRoom;
-    public Color startColor, endColor, shopColor;
+    public Color startColor, endColor, shopColor, gunRoomColor;
+    
     
     public int distanceToEnd;
     public bool includeShop;
     public int minDistanceToShop, maxDistanceToShop;
+
+
+
+    public bool includeGunRoom;
+    public int minDistanceToGunRoom, maxDistanceToGunRoom;
     
     public Transform generatorPoint;
 
@@ -28,7 +34,7 @@ public class LevelGenerator : MonoBehaviour {
 
     public LayerMask roomLayerMask;
 
-    private GameObject _endRoom, _shopRoom;
+    private GameObject _endRoom, _shopRoom, _gunRoom;
     
     private List<GameObject> _layoutRoomObjects = new List<GameObject>();
 
@@ -36,7 +42,7 @@ public class LevelGenerator : MonoBehaviour {
     
     private List<GameObject> _generatedOutlines = new List<GameObject>();
 
-    public RoomCenter centerStart, centerEnd, centerShop;
+    public RoomCenter centerStart, centerEnd, centerShop, centerGunRoom;
     public RoomCenter[] potentialCenters;
     
     // Start is called before the first frame update
@@ -70,11 +76,27 @@ public class LevelGenerator : MonoBehaviour {
             }
         }
 
+        // Shop room
         if (includeShop) {
             int shopSelector = Random.Range(minDistanceToShop, maxDistanceToShop + 1);
             _shopRoom = _layoutRoomObjects[shopSelector];
             _layoutRoomObjects.RemoveAt(shopSelector);
             _shopRoom.GetComponent<SpriteRenderer>().color = shopColor;
+        } 
+        
+        
+        // Gun Room
+        if (includeShop) {
+            // Prevent index out of bounds risk
+            if (includeShop) {
+                minDistanceToGunRoom -= 1;
+                maxDistanceToGunRoom -= 1;
+            }
+            
+            int grSelector = Random.Range(minDistanceToGunRoom, maxDistanceToGunRoom + 1);
+            _gunRoom = _layoutRoomObjects[grSelector];
+            _layoutRoomObjects.RemoveAt(grSelector);
+            _gunRoom.GetComponent<SpriteRenderer>().color = gunRoomColor;
         }
         
         
@@ -86,8 +108,15 @@ public class LevelGenerator : MonoBehaviour {
         }
         
         CreateRoomOutline(_endRoom.transform.position);
+        
+        // Shop Room
         if (includeShop) {
             CreateRoomOutline(_shopRoom.transform.position);
+        }        
+        
+        // Gun Room
+        if (includeGunRoom) {
+            CreateRoomOutline(_gunRoom.transform.position);
         }
         
         // Create room centers
@@ -104,13 +133,27 @@ public class LevelGenerator : MonoBehaviour {
                 Instantiate(centerEnd, outline.transform.position, transform.rotation).theRoom = outline.GetComponent<Room>();
                 centerSetted = true;
             }
-
+            
+            
+            // Shop room 
             if (includeShop) {
                 if (outline.transform.position == _shopRoom.transform.position) {
                     Instantiate(centerShop, outline.transform.position, transform.rotation).theRoom = outline.GetComponent<Room>();
                     centerSetted = true;
                 }
             }
+            
+            
+            // Gun room
+            if (includeGunRoom) {
+                if (outline.transform.position == _gunRoom.transform.position) {
+                    Instantiate(centerGunRoom, outline.transform.position, transform.rotation).theRoom = outline.GetComponent<Room>();
+                    centerSetted = true;
+                }
+            }
+            
+            
+            
 
             if (!centerSetted) {
                 int centerSelect = Random.Range(0, potentialCenters.Length);

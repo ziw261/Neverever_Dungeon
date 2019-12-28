@@ -2,6 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
+
 
 public class ShopItem : MonoBehaviour {
 
@@ -14,9 +17,24 @@ public class ShopItem : MonoBehaviour {
     public int itemCost;
 
     public int healthIncreaseAmount;
+
+    public Gun[] potentialGuns;
+    private Gun _theGun;
+    public SpriteRenderer gunSprite;
+    public Text infoText;
+    
+    
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
+
+        if (isWeapon) {
+            int selectedGun = Random.Range(0, potentialGuns.Length);
+            _theGun = potentialGuns[selectedGun];
+
+            gunSprite.sprite = _theGun.gunShopSprite;
+            infoText.text = _theGun.weaponName + "\n - " + _theGun.itemCost + " Gold -";
+            itemCost = _theGun.itemCost;
+        }
         
     }
 
@@ -33,6 +51,24 @@ public class ShopItem : MonoBehaviour {
                         PlayerHealthController.Instance.HealPlayer(PlayerHealthController.Instance.maxHealth);
                     } else if (isHealthUpgrade) {
                         PlayerHealthController.Instance.IncreaseMaxHealth(healthIncreaseAmount);
+                    } else if (isWeapon) {
+                        bool hasGun = false;
+                        foreach (Gun gun in PlayerController.Instance.availableGuns) {
+                            if (gun.weaponName.Equals(_theGun.weaponName)) {
+                                hasGun = true;
+                            }
+                        }
+
+                        if (!hasGun) {
+                            Gun gunClone = Instantiate(_theGun);
+                            gunClone.transform.parent = PlayerController.Instance.gunDir;
+                            gunClone.transform.position = PlayerController.Instance.gunDir.position;
+                            gunClone.transform.localRotation = Quaternion.Euler(Vector3.zero);
+                            gunClone.transform.localScale = Vector3.one;
+                
+                            PlayerController.Instance.availableGuns.Add(gunClone);
+                            PlayerController.Instance.ChangeToNewGun();
+                        }
                     }
                     
                     gameObject.SetActive(false);

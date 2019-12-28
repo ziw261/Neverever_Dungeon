@@ -8,3 +8,5 @@ After making room centers, add them into level generator.
 For enemy fire don't forget to set patrol points
 
 When adding new objects, remember to set to the right sorting layer and layer interaction.
+
+Remember to turn on the fade screen in UI !!!!!

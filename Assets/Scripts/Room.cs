@@ -13,6 +13,8 @@ public class Room : MonoBehaviour {
     //public List<GameObject> enemies = new List<GameObject>();
 
     private bool _roomActive;
+
+    public GameObject mapHider;
     
     // Start is called before the first frame update
     void Start() {
@@ -62,6 +64,7 @@ public class Room : MonoBehaviour {
             }
 
             _roomActive = true;
+            mapHider.SetActive(false);
         }
     }
 

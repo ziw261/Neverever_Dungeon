@@ -18,12 +18,14 @@ public class PlayerController : MonoBehaviour {
     private Camera _theCam;
 
     public Animator anim;
-
+    
+    /*
     public GameObject bulletToFire;
     public Transform firePoint;
 
     public float timeBetweenShots;
     private float _shotCounter;
+    */
 
     public SpriteRenderer bodySpriteRenderer;
 
@@ -35,6 +37,9 @@ public class PlayerController : MonoBehaviour {
     
     private bool _canMove = true;
     
+    public List<Gun> availableGuns = new List<Gun>();
+    private int _currentGun;
+    
     
     void Awake() {
         Instance = this;
@@ -45,6 +50,8 @@ public class PlayerController : MonoBehaviour {
     void Start() {
         _theCam = Camera.main;
         _activeMoveSpeed = moveSpeed;
+        UIController.Instance.currentGun.sprite = availableGuns[_currentGun].gunUI;
+        UIController.Instance.gunText.text = availableGuns[_currentGun].weaponName;
 
     }
 
@@ -75,10 +82,13 @@ public class PlayerController : MonoBehaviour {
 
             }
 
+            
+            // Rotate gun hand
             Vector2 offSet = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
             float angle = Mathf.Atan2(offSet.y, offSet.x) * Mathf.Rad2Deg;
             gunDir.rotation = Quaternion.Euler(0, 0, angle);
 
+            /*
             if (Input.GetMouseButtonDown(0)) {
                 Instantiate(bulletToFire, firePoint.position, firePoint.rotation);
                 _shotCounter = timeBetweenShots;
@@ -93,6 +103,21 @@ public class PlayerController : MonoBehaviour {
                     Instantiate(bulletToFire, firePoint.position, firePoint.rotation);
                     AudioManager.Instance.PlaySFX(12);
                     _shotCounter = timeBetweenShots;
+                }
+            }
+            */
+            
+            
+            // Switch Gun
+            if (Input.GetKeyDown(KeyCode.Tab)) {
+                if (availableGuns.Count > 0) {
+                    _currentGun++;
+                    if (_currentGun >= availableGuns.Count) {
+                        _currentGun = 0;
+                    }
+                    SwitchGun();
+                } else {
+                    Debug.LogError(" Player has no guns?");
                 }
             }
 
@@ -136,11 +161,35 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    public void SwitchGun() {
+        foreach (Gun theGun in availableGuns) {
+            theGun.gameObject.SetActive(false);
+        }
+        
+        availableGuns[_currentGun].gameObject.SetActive(true);
+        UIController.Instance.currentGun.sprite = availableGuns[_currentGun].gunUI;
+        UIController.Instance.gunText.text = availableGuns[_currentGun].weaponName;
+    }
+    
+
     public float GetDashCounter() {
         return _dashCounter;
     }
 
     public void StopMove() {
         _canMove = false;
+    }
+
+    public void StartMove() {
+        _canMove = true;
+    }
+
+    public bool ReturnMoveStatus() {
+        return _canMove;
+    }
+
+    public void ChangeToNewGun() {
+        _currentGun = availableGuns.Count - 1;
+        SwitchGun();
     }
 }
