@@ -14,8 +14,7 @@ public class PlayerController : MonoBehaviour {
 
     public Rigidbody2D theRb;
     public Transform gunDir;
-
-    private Camera _theCam;
+    
 
     public Animator anim;
     
@@ -43,12 +42,14 @@ public class PlayerController : MonoBehaviour {
     
     void Awake() {
         Instance = this;
+        
+        DontDestroyOnLoad(gameObject);
     }    
     
     
     // Start is called before the first frame update
     void Start() {
-        _theCam = Camera.main;
+
         _activeMoveSpeed = moveSpeed;
         UIController.Instance.currentGun.sprite = availableGuns[_currentGun].gunUI;
         UIController.Instance.gunText.text = availableGuns[_currentGun].weaponName;
@@ -71,7 +72,7 @@ public class PlayerController : MonoBehaviour {
 
             // Calculate direction
             Vector3 mousePos = Input.mousePosition;
-            Vector3 screenPoint = _theCam.WorldToScreenPoint(transform.localPosition);
+            Vector3 screenPoint = CameraController.Instance.mainCamera.WorldToScreenPoint(transform.localPosition);
 
             if (mousePos.x < screenPoint.x) {
                 transform.localScale = new Vector3(-1f, 1f, 1f);
@@ -191,5 +192,9 @@ public class PlayerController : MonoBehaviour {
     public void ChangeToNewGun() {
         _currentGun = availableGuns.Count - 1;
         SwitchGun();
+    }
+
+    public int GetCurrentGun() {
+        return _currentGun;
     }
 }

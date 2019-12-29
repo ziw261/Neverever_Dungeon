@@ -33,6 +33,11 @@ public class PlayerBullet : MonoBehaviour {
         if (other.CompareTag("Enemy")) {
             other.GetComponent<EnemyController>().DamageEnemy(damgeToDeal);
         }
+
+        if (other.CompareTag("Boss")) {
+            BossController.Instance.TakeDamage(damgeToDeal);
+            Instantiate(BossController.Instance.hitEffect, transform.position, transform.rotation);
+        }
     }
 
 

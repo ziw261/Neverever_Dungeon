@@ -8,9 +8,15 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="AudioManager.cs" t="Include" />
+          <e p="BossBullet.cs" t="Include" />
+          <e p="BossController.cs" t="Include" />
           <e p="Breakables.cs" t="Include" />
           <e p="BrokenPieces.cs" t="Include" />
           <e p="CameraController.cs" t="Include" />
+          <e p="CharacterSelectManager.cs" t="Include" />
+          <e p="CharacterSelector.cs" t="Include" />
+          <e p="CharacterTracker.cs" t="Include" />
+          <e p="CharacterUnlockCage.cs" t="Include" />
           <e p="CoinPickup.cs" t="Include" />
           <e p="DamagePlayer.cs" t="Include" />
           <e p="EnemyBullet.cs" t="Include" />

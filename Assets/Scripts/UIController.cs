@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking.PlayerConnection;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -35,6 +36,10 @@ public class UIController : MonoBehaviour {
     public Image currentGun;
     public Text gunText;
     
+    // Boss
+    public Slider bossHealthBar;
+    
+    
     private void Awake() {
         Instance = this;
     }
@@ -43,6 +48,9 @@ public class UIController : MonoBehaviour {
     void Start() {
         _fadeOutBlack = true;
         _fadeToBlack = false;
+
+        currentGun.sprite = PlayerController.Instance.availableGuns[PlayerController.Instance.GetCurrentGun()].gunUI;
+        gunText.text = PlayerController.Instance.availableGuns[PlayerController.Instance.GetCurrentGun()].weaponName;
     }
 
     // Update is called once per frame
@@ -73,6 +81,9 @@ public class UIController : MonoBehaviour {
         Time.timeScale = 1f;
         
         SceneManager.LoadScene(newGameScene);
+        
+        Destroy(PlayerController.Instance.gameObject);
+
     }
 
 
@@ -81,6 +92,8 @@ public class UIController : MonoBehaviour {
         Time.timeScale = 1f;
         
         SceneManager.LoadScene(mainMenuScene);
+        
+        Destroy(PlayerController.Instance.gameObject);
     }
 
 

@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &360017454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099431507892489005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce39c1d99f39fce48b39e01f48775124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: {fileID: 5544486604549326416}
+  playerToSpawn: {fileID: 3766716566378215627, guid: 208f8af924217b5459459deb9a1acded,
+    type: 3}
+--- !u!1001 &979043242114063244
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 544833091075206516, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203850270967419041, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_Name
+      value: Character Select - Devil
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203850270967419041, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203850270967419041, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778460471347070860, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4791017427084006217, guid: a47294d8f066c634d90ee371916313ff,
+        type: 3}
+    - target: {fileID: 6279003911683982999, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_Text
+      value: '''Devil'''
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762464161374855564, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762464161374855564, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 26.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762464161374855564, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762464161374855564, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762464161374855564, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762464161374855564, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762464161374855564, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762464161374855564, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762464161374855564, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762464161374855564, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762464161374855564, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9, type: 3}
+--- !u!1 &2099431507892489005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1203850270967419041, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 979043242114063244}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5544486604549326416 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4712941783286783452, guid: c96a4f67c780ac345bdf4bd3f2a2a2a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 979043242114063244}
+  m_PrefabAsset: {fileID: 0}

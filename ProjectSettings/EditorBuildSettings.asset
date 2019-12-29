@@ -12,8 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Title Menu.unity
     guid: b67dd1e9fedcf864a952fd5f2fd0030b
   - enabled: 1
-    path: Assets/Scenes/Test.unity
-    guid: d5075f61a52d4d445b1021b2ecef4ce1
+    path: Assets/Scenes/Character Select.unity
+    guid: 41521caf0903adf4ea7232e7bb5d9554
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: fa14b7b444fd2044d981d3ce1d367ed0
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: ff5535e146145f34e96d3c81f55d75fc
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: 4beb4d4a04c98cd41aebc45faf0fe9f7
+  - enabled: 1
+    path: Assets/Scenes/Boss 1.unity
+    guid: cda0c90e4da12424a89db558a5b80a4c
   - enabled: 1
     path: Assets/Scenes/Victory.unity
     guid: f7acbfe294bc6ae4d99cb27d3b7d56bc
