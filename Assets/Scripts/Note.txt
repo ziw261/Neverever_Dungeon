@@ -10,3 +10,10 @@ For enemy fire don't forget to set patrol points
 When adding new objects, remember to set to the right sorting layer and layer interaction.
 
 Remember to turn on the fade screen in UI !!!!!
+
+
+
+
+Future Update:
+1. 每个角色拥有独特的能力技能。 忍者：（主动技）霰弹枪。  (Low)小偷：增加怪物物品掉率。   宇航员：（主动技）无敌/减伤      恶魔：血越少，伤害越高，血掉50%，伤害提高50%     勇者：（主动技能）时间停止   洞窟男：杀怪回血 
+2. 

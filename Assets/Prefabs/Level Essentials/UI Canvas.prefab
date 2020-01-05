@@ -1672,7 +1672,7 @@ MonoBehaviour:
   coinText: {fileID: 6126776422270451298}
   fadeScreen: {fileID: 6788392356905488788}
   fadeSpeed: 1
-  newGameScene: Test
+  newGameScene: Level 1
   mainMenuScene: Title Menu
   pauseMenu: {fileID: 1711894754}
   mapDisplay: {fileID: 918291370}

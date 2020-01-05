@@ -134,8 +134,7 @@ public class BossAction {
 
 
 [System.Serializable]
-public class BossSequence
-{
+public class BossSequence {
     [Header("Sequence")] 
     public BossAction[] actions;
 

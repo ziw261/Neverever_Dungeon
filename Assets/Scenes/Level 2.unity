@@ -121,18 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &120930886 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 731029063404660738, guid: a510d8170390fd14480ebfacd547ba21,
-    type: 3}
-  m_PrefabInstance: {fileID: 6788392355694400019}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &376963605 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2797202937539140891, guid: 300565dd69ab40341ac4bf0b58141c85,
@@ -1467,37 +1455,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 731029063404660738, guid: a510d8170390fd14480ebfacd547ba21,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 262978286505467586, guid: f72804754a2106a4884d758772ef2a02,
-        type: 3}
-    - target: {fileID: 731029063404660738, guid: a510d8170390fd14480ebfacd547ba21,
-        type: 3}
-      propertyPath: m_PreserveAspect
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5453980273417208851, guid: a510d8170390fd14480ebfacd547ba21,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6436241365893845400, guid: a510d8170390fd14480ebfacd547ba21,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -809
-      objectReference: {fileID: 0}
-    - target: {fileID: 6436241365893845400, guid: a510d8170390fd14480ebfacd547ba21,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -461
-      objectReference: {fileID: 0}
-    - target: {fileID: 6436241365893845400, guid: a510d8170390fd14480ebfacd547ba21,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 6788392355819977962, guid: a510d8170390fd14480ebfacd547ba21,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1618,27 +1575,5 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6788392355935172715, guid: a510d8170390fd14480ebfacd547ba21,
-        type: 3}
-      propertyPath: currentGun
-      value: 
-      objectReference: {fileID: 120930886}
-    - target: {fileID: 6788392355935172715, guid: a510d8170390fd14480ebfacd547ba21,
-        type: 3}
-      propertyPath: gunText
-      value: 
-      objectReference: {fileID: 6788392355694400020}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a510d8170390fd14480ebfacd547ba21, type: 3}
---- !u!114 &6788392355694400020 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4616210974302991009, guid: a510d8170390fd14480ebfacd547ba21,
-    type: 3}
-  m_PrefabInstance: {fileID: 6788392355694400019}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

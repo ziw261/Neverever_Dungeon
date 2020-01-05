@@ -1465,7 +1465,7 @@ PrefabInstance:
     - target: {fileID: 5453980273417208851, guid: a510d8170390fd14480ebfacd547ba21,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6436241365893845400, guid: a510d8170390fd14480ebfacd547ba21,
         type: 3}
@@ -1612,6 +1612,11 @@ PrefabInstance:
       propertyPath: gunText
       value: 
       objectReference: {fileID: 6788392355694400020}
+    - target: {fileID: 6788392355935172715, guid: a510d8170390fd14480ebfacd547ba21,
+        type: 3}
+      propertyPath: newGameScene
+      value: Character Select
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a510d8170390fd14480ebfacd547ba21, type: 3}
 --- !u!114 &6788392355694400020 stripped
