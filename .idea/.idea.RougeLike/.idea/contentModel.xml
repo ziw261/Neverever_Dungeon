@@ -29,6 +29,7 @@
           <e p="LevelGenerator.cs" t="Include" />
           <e p="LevelManager.cs" t="Include" />
           <e p="MainMenu.cs" t="Include" />
+          <e p="NinjaPower.cs" t="Include" />
           <e p="Note.txt" t="Include" />
           <e p="PlayerBullet.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />

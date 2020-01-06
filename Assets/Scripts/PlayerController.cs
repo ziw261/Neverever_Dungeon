@@ -18,14 +18,6 @@ public class PlayerController : MonoBehaviour {
 
     public Animator anim;
     
-    /*
-    public GameObject bulletToFire;
-    public Transform firePoint;
-
-    public float timeBetweenShots;
-    private float _shotCounter;
-    */
-
     public SpriteRenderer bodySpriteRenderer;
 
     private float _activeMoveSpeed;
