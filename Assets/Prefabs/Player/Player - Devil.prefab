@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3766716566378215621}
   - component: {fileID: 3766716566378215622}
   - component: {fileID: 3766716566378215623}
+  - component: {fileID: 8327523045468340644}
   m_Layer: 8
   m_Name: Player - Devil
   m_TagString: Player
@@ -118,6 +119,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8327523045468340644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3766716566378215626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce5cbdf1d8bca49ada1fd6fe300dab60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3766716566465856660
 GameObject:
   m_ObjectHideFlags: 0

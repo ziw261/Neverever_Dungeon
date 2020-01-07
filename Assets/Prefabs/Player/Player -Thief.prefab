@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 4434707002519859771}
   - component: {fileID: 4434707002519859768}
   - component: {fileID: 4434707002519859769}
+  - component: {fileID: 1577851688470861312}
   m_Layer: 8
   m_Name: Player -Thief
   m_TagString: Player
@@ -256,6 +257,12 @@ MonoBehaviour:
   dashInvincibility: 0.5
   availableGuns:
   - {fileID: 74975603346023338}
+  damageExtraToAdd: 0
+  damageExtraToMultiply: 1
+  isCaveMan: 0
+  healAmountForCaveMan: 1
+  isTheif: 0
+  itemDropRateToMultiply: 2
 --- !u!58 &4434707002519859771
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -312,6 +319,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1577851688470861312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4434707002519859764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e02b321bc41454c99dd55d9ccdb188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDropRateToMultiply: 3
 --- !u!1 &4434707003011075690
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour  {
@@ -53,13 +54,12 @@ public class EnemyController : MonoBehaviour  {
     
     
     
-    
-    
     // Start is called before the first frame update
     void Start() {
         if (shouldWander) {
             _pauseCounter = Random.Range(pauseLength * 0.75f, pauseLength * 1.25f);
         }
+
     }
 
     // Update is called once per frame
@@ -167,6 +167,10 @@ public class EnemyController : MonoBehaviour  {
         if (health <= 0) {
             
             Destroy(gameObject);
+
+            if (PlayerController.Instance.isCaveMan) {
+                PlayerHealthController.Instance.HealPlayer(PlayerController.Instance.healAmountForCaveMan);
+            }
             
             AudioManager.Instance.PlaySFX(1);
             
@@ -180,6 +184,10 @@ public class EnemyController : MonoBehaviour  {
                     
                 float dropChance = Random.Range(0f, 100f);
                     
+                if (PlayerController.Instance.isTheif) {
+                    itemDropPercent = itemDropPercent * PlayerController.Instance.itemDropRateToMultiply;
+                }
+                
                 if (dropChance <= itemDropPercent) {
                     int randomItem = Random.Range(0, itemsToDrop.Length);
 

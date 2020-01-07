@@ -32,6 +32,18 @@ public class PlayerController : MonoBehaviour {
     private int _currentGun;
     
     
+    [HideInInspector]
+    public int damageExtraToAdd = 0;
+    public float damageExtraToMultiply = 1;
+
+    [HideInInspector] 
+    public bool isCaveMan = false;
+    public int healAmountForCaveMan = 1;
+
+    [HideInInspector] 
+    public bool isTheif = false;
+    public int itemDropRateToMultiply = 2;
+    
     void Awake() {
         Instance = this;
         
@@ -42,10 +54,17 @@ public class PlayerController : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
 
+        isCaveMan = false;
+        isTheif = false;
+        
+        damageExtraToAdd = 0;
+        damageExtraToMultiply = 1f;
+        
         _activeMoveSpeed = moveSpeed;
         UIController.Instance.currentGun.sprite = availableGuns[_currentGun].gunUI;
         UIController.Instance.gunText.text = availableGuns[_currentGun].weaponName;
-
+        
+        
     }
 
     // Update is called once per frame

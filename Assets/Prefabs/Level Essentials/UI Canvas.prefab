@@ -1672,13 +1672,13 @@ MonoBehaviour:
   coinText: {fileID: 6126776422270451298}
   fadeScreen: {fileID: 6788392356905488788}
   fadeSpeed: 1
-  newGameScene: Level 1
+  newGameScene: Character Select
   mainMenuScene: Title Menu
   pauseMenu: {fileID: 1711894754}
   mapDisplay: {fileID: 918291370}
   bigMapText: {fileID: 4095644813376817717}
   currentGun: {fileID: 731029063404660738}
-  gunText: {fileID: 4616210974302991009}
+  gunText: {fileID: 0}
   bossHealthBar: {fileID: 1285490540307589390}
 --- !u!1 &6788392356297052918
 GameObject:

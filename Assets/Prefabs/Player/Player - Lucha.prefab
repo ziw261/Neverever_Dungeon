@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2080883100236100895}
   - component: {fileID: 2080883100236100892}
   - component: {fileID: 2080883100236100893}
+  - component: {fileID: 2427040561434756843}
   m_Layer: 8
   m_Name: Player - Lucha
   m_TagString: Player
@@ -62,6 +63,8 @@ MonoBehaviour:
   dashInvincibility: 0.5
   availableGuns:
   - {fileID: 2333334423598998670}
+  damageExtraToAdd: 0
+  damageExtraToMultiply: 1
 --- !u!58 &2080883100236100895
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -118,6 +121,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2427040561434756843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080883100236100880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97df1ac46c08441a933bb9061f680a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDownTime: 10
+  powerLastTime: 0.3
 --- !u!1 &2080883100457634126
 GameObject:
   m_ObjectHideFlags: 0

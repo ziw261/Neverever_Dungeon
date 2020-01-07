@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 6250571880465182330}
   - component: {fileID: 6250571880465182329}
   - component: {fileID: 6250571880465182328}
+  - component: {fileID: -6616356944971759042}
   m_Layer: 8
   m_Name: Player - Caveman
   m_TagString: Player
@@ -226,6 +227,10 @@ MonoBehaviour:
   dashInvincibility: 0.5
   availableGuns:
   - {fileID: 7655870250076651499}
+  damageExtraToAdd: 0
+  damageExtraToMultiply: 1
+  isCaveMan: 0
+  healAmountForCaveMan: 1
 --- !u!58 &6250571880465182330
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -282,6 +287,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-6616356944971759042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6250571880465182325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cda66350e7b34e51b644d43125658ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healAmountForCaveMan: 1
 --- !u!1 &6250571881212313837
 GameObject:
   m_ObjectHideFlags: 0

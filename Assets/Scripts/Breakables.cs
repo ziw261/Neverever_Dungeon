@@ -61,7 +61,11 @@ public class Breakables : MonoBehaviour {
         if (shouldDropItem) {
                     
             float dropChance = Random.Range(0f, 100f);
-                    
+
+            if (PlayerController.Instance.isTheif) {
+                itemDropPercent = itemDropPercent * PlayerController.Instance.itemDropRateToMultiply;
+            }
+            
             if (dropChance <= itemDropPercent) {
                 int randomItem = Random.Range(0, itemsToDrop.Length);
 

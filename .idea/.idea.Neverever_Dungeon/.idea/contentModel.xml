@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="AudioManager.cs" t="Include" />
+          <e p="BossBullet.cs" t="Include" />
+          <e p="BossController.cs" t="Include" />
+          <e p="Breakables.cs" t="Include" />
+          <e p="BrokenPieces.cs" t="Include" />
+          <e p="CameraController.cs" t="Include" />
+          <e p="CaveManPower.cs" t="Include" />
+          <e p="CharacterSelectManager.cs" t="Include" />
+          <e p="CharacterSelector.cs" t="Include" />
+          <e p="CharacterTracker.cs" t="Include" />
+          <e p="CharacterUnlockCage.cs" t="Include" />
+          <e p="CoinPickup.cs" t="Include" />
+          <e p="DamagePlayer.cs" t="Include" />
+          <e p="DevilPower.cs" t="Include" />
+          <e p="EnemyBullet.cs" t="Include" />
+          <e p="EnemyController.cs" t="Include" />
+          <e p="Gun.cs" t="Include" />
+          <e p="GunChest.cs" t="Include" />
+          <e p="GunPickup.cs" t="Include" />
+          <e p="HealthPickup.cs" t="Include" />
+          <e p="LevelExit.cs" t="Include" />
+          <e p="LevelGenerator.cs" t="Include" />
+          <e p="LevelManager.cs" t="Include" />
+          <e p="LuchaPower.cs" t="Include" />
+          <e p="MainMenu.cs" t="Include" />
+          <e p="NinjaPower.cs" t="Include" />
+          <e p="Note.txt" t="Include" />
+          <e p="PlayerBullet.cs" t="Include" />
+          <e p="PlayerController.cs" t="Include" />
+          <e p="PlayerHealthController.cs" t="Include" />
+          <e p="Room.cs" t="Include" />
+          <e p="RoomCenter.cs" t="Include" />
+          <e p="ShopItem.cs" t="Include" />
+          <e p="SpacemanPower.cs" t="Include" />
+          <e p="SpriteSortOrder.cs" t="Include" />
+          <e p="ThiefPower.cs" t="Include" />
+          <e p="UIController.cs" t="Include" />
+          <e p="VictoryScreen.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Neverever_Dungeon.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
+    </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Neverever_Dungeon.431184329.00" t="ExcludeRecursive" />
+  </component>
+</project>

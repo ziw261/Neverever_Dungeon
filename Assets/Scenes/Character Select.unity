@@ -127,18 +127,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6788392355694400019}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &120930886 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 731029063404660738, guid: a510d8170390fd14480ebfacd547ba21,
-    type: 3}
-  m_PrefabInstance: {fileID: 6788392355694400019}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &259746163 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5291532739183054994, guid: bef971042578ada4397dc937eed28ec5,
@@ -6042,6 +6030,7 @@ MonoBehaviour:
   target: {fileID: 259746164}
   mainCamera: {fileID: 519420031}
   bigMapCamera: {fileID: 1019244613}
+  isBossRoom: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -6619,6 +6608,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2015036607, guid: 4fc4d50c45a1fca45abbe42fbd5d4f14, type: 3}
+      propertyPath: shouldUnlock
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1741472660875411486, guid: 4fc4d50c45a1fca45abbe42fbd5d4f14,
         type: 3}
       propertyPath: m_Name
@@ -6766,6 +6759,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 360017454, guid: 3fbbd12aaabc44643ab5d5d1285b8b33, type: 3}
+      propertyPath: shouldUnlock
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2099431507892489005, guid: 3fbbd12aaabc44643ab5d5d1285b8b33,
         type: 3}
       propertyPath: m_Name
@@ -6840,6 +6837,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 261679597, guid: 6ebed3d7da55b334e80baf2210b9721b, type: 3}
+      propertyPath: shouldUnlock
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2261415226409783092, guid: 6ebed3d7da55b334e80baf2210b9721b,
         type: 3}
       propertyPath: m_Name
@@ -7251,6 +7252,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5453980273417208851, guid: a510d8170390fd14480ebfacd547ba21,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5759557860351943641, guid: a510d8170390fd14480ebfacd547ba21,
         type: 3}
       propertyPath: m_IsActive
@@ -7398,11 +7404,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6788392355935172715, guid: a510d8170390fd14480ebfacd547ba21,
         type: 3}
-      propertyPath: currentGun
-      value: 
-      objectReference: {fileID: 120930886}
-    - target: {fileID: 6788392355935172715, guid: a510d8170390fd14480ebfacd547ba21,
-        type: 3}
       propertyPath: gunText
       value: 
       objectReference: {fileID: 1063384174}
@@ -7450,6 +7451,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1413647722, guid: aa7c906a0ea31df40818eff68dd4d336, type: 3}
+      propertyPath: shouldUnlock
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1741291424450322602, guid: aa7c906a0ea31df40818eff68dd4d336,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7524,6 +7529,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 651205666, guid: 59d864d9bcaa3c34d9535e4ec7125dac, type: 3}
+      propertyPath: shouldUnlock
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 800745655829558212, guid: 59d864d9bcaa3c34d9535e4ec7125dac,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -18,12 +18,14 @@ public class Gun : MonoBehaviour {
     
     
     // Special Power from Characters
-    //[HideInInspector]
+    [HideInInspector]
     public bool isNinjaPowerOn = false;
+    public bool isLuchaPowerOn = false;
     
     // Start is called before the first frame update
     void Start() {
         isNinjaPowerOn = false;
+        isLuchaPowerOn = false;
     }
 
     // Update is called once per frame
@@ -47,8 +49,11 @@ public class Gun : MonoBehaviour {
                 }
             }
             
-        } else if (PlayerController.Instance.ReturnMoveStatus() && !LevelManager.Instance.isPaused) {
-
+        } else if (isLuchaPowerOn) {
+            if (PlayerController.Instance.ReturnMoveStatus() && !LevelManager.Instance.isPaused) {
+                LuchaShoot();
+            }
+        }else if (PlayerController.Instance.ReturnMoveStatus() && !LevelManager.Instance.isPaused) {
             NormalShoot();
         }
     }
@@ -65,6 +70,13 @@ public class Gun : MonoBehaviour {
 
             }
                 
+        }
+    }
+
+    public void LuchaShoot() {
+        if (Input.GetMouseButtonDown(0)) {
+            Instantiate(bulletToFire, firePoint.position, firePoint.rotation);
+            AudioManager.Instance.PlaySFX(12);
         }
     }
 }
