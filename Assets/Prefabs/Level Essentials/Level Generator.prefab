@@ -78,7 +78,15 @@ MonoBehaviour:
     type: 3}
   startColor: {r: 0, g: 0.9529412, b: 1, a: 1}
   endColor: {r: 1, g: 0, b: 0, a: 1}
+  shopColor: {r: 0, g: 0, b: 0, a: 0}
+  gunRoomColor: {r: 0, g: 0, b: 0, a: 0}
   distanceToEnd: 10
+  includeShop: 0
+  minDistanceToShop: 0
+  maxDistanceToShop: 0
+  includeGunRoom: 0
+  minDistanceToGunRoom: 0
+  maxDistanceToGunRoom: 0
   generatorPoint: {fileID: 2685629239912299236}
   selectedDirection: 0
   xOffset: 18
@@ -121,6 +129,12 @@ MonoBehaviour:
     type: 3}
   centerEnd: {fileID: 5876515534381063145, guid: a1dcfeb66f7009b4fb8f80de79e4787b,
     type: 3}
+  centerShop: {fileID: 3930552727875582245, guid: bc7e54348a649c54eb40538f8f9e884b,
+    type: 3}
+  centerGunRoom: {fileID: 9082031014809458154, guid: f3301ac12d4b5974a8b36289b3ec347e,
+    type: 3}
   potentialCenters:
   - {fileID: 9182835829993041649, guid: b563e6a7b3193704e99e6b3b04708c73, type: 3}
-  - {fileID: 2927362855347627172, guid: 14ac11d39af4596468e4f80d2b051f59, type: 3}
+  - {fileID: 5123869869596594869, guid: a5b1847b246ae43dabd07c96a174e0d1, type: 3}
+  - {fileID: 4739832686105238082, guid: cfc394bed98fd470fb3cae4e3af01e55, type: 3}
+  - {fileID: 5973132424415586047, guid: 2c33943dceaf64568b916e4ee8c0b0d0, type: 3}
