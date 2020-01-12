@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 5291532739183055004}
   - component: {fileID: 5291532739183055007}
   - component: {fileID: 5291532739183055006}
+  - component: {fileID: 8077189841276760453}
   m_Layer: 8
   m_Name: Player - Sneaker
   m_TagString: Player
@@ -144,6 +145,18 @@ MonoBehaviour:
   dashInvincibility: 0.5
   availableGuns:
   - {fileID: 8497781849802375437}
+  isDevil: 0
+  damageExtraToAdd: 0
+  damageExtraToMultiply: 1
+  isCaveMan: 0
+  healAmountForCaveMan: 1
+  isTheif: 0
+  itemDropRateToMultiply: 2
+  isLucha: 0
+  isNinja: 0
+  isPirate: 0
+  isSneaker: 0
+  isSpaceMan: 0
 --- !u!58 &5291532739183055004
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -200,6 +213,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8077189841276760453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5291532739183054995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97448febbe13e0a4790d9a996b6d519b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5291532739530501325
 GameObject:
   m_ObjectHideFlags: 0

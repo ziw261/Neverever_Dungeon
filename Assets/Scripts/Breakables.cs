@@ -62,7 +62,7 @@ public class Breakables : MonoBehaviour {
                     
             float dropChance = Random.Range(0f, 100f);
 
-            if (PlayerController.Instance.isTheif) {
+            if (PlayerController.Instance.isThief) {
                 itemDropPercent = itemDropPercent * PlayerController.Instance.itemDropRateToMultiply;
             }
             

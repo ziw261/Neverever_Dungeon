@@ -7,14 +7,13 @@ public class CaveManPower : MonoBehaviour {
     public int healAmountForCaveMan = 1;
     
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+        PlayerController.Instance.I_Am("CaveMan");
+        PlayerController.Instance.healAmountForCaveMan = healAmountForCaveMan;
     }
 
     // Update is called once per frame
     void Update() {
-        PlayerController.Instance.isCaveMan = true;
-        PlayerController.Instance.healAmountForCaveMan = healAmountForCaveMan;
+
     }
 }

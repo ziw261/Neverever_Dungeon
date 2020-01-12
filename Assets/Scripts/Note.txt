@@ -12,6 +12,9 @@ When adding new objects, remember to set to the right sorting layer and layer in
 Remember to turn on the fade screen in UI !!!!!
 
 
+All the abilities implementation are all in its own characters' scripts. The decision is made in AbilityManager. 
+PlayerController holds all the labels
+Caveman's actual implementation of passive skill is in EnemyController.cs
 
 
 Future Update:

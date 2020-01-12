@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+    <e p="C:\Users\marin\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\marin\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Neverever_Dungeon.-788966641.00" t="ExcludeRecursive" />
+    <e p="D:\GitHub\Neverever_Dungeon" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="AbilityManager.cs" t="Include" />
           <e p="AudioManager.cs" t="Include" />
           <e p="BossBullet.cs" t="Include" />
           <e p="BossController.cs" t="Include" />
@@ -32,12 +35,14 @@
           <e p="MainMenu.cs" t="Include" />
           <e p="NinjaPower.cs" t="Include" />
           <e p="Note.txt" t="Include" />
+          <e p="PiratePower.cs" t="Include" />
           <e p="PlayerBullet.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerHealthController.cs" t="Include" />
           <e p="Room.cs" t="Include" />
           <e p="RoomCenter.cs" t="Include" />
           <e p="ShopItem.cs" t="Include" />
+          <e p="SneakerPower.cs" t="Include" />
           <e p="SpacemanPower.cs" t="Include" />
           <e p="SpriteSortOrder.cs" t="Include" />
           <e p="ThiefPower.cs" t="Include" />
@@ -48,9 +53,7 @@
       <e p="Neverever_Dungeon.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
-      <e p="Temp/bin" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Neverever_Dungeon.431184329.00" t="ExcludeRecursive" />
   </component>
 </project>

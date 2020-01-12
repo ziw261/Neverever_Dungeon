@@ -96,12 +96,14 @@ public class PlayerHealthController : MonoBehaviour {
     public void IncreaseMaxHealth(int increaseAmount) {
         maxHealth += increaseAmount;
         currentHealth = maxHealth;
-        
-        
+
+
         // UI for health bar
         UIController.Instance.healthSlider.maxValue = maxHealth;
         UIController.Instance.healthSlider.value = currentHealth;
         UIController.Instance.heathText.text = currentHealth + " / " + maxHealth;
     }
+
+    
 
 }

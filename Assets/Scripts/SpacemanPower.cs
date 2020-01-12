@@ -1,10 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SpacemanPower : MonoBehaviour {
 
-    public int increaseHelathAmount = 5;
+    public static SpacemanPower Instance;
+    
+    
+    public int increaseHealthAmount = 5;
     
     
     public int powerLastTime = 5;
@@ -13,15 +17,21 @@ public class SpacemanPower : MonoBehaviour {
     private float _powerLastCounter = 0f;
     private bool _inPowerTime = false;
     private bool _inCoolDown = false;
-    
-    
+
+
+    private void Awake() {
+        Instance = this;
+    }
+
+
     // Start is called before the first frame update
     void Start() {
-        PlayerHealthController.Instance.maxHealth += increaseHelathAmount;
-        PlayerHealthController.Instance.currentHealth = PlayerHealthController.Instance.maxHealth;
-        UIController.Instance.healthSlider.maxValue = PlayerHealthController.Instance.maxHealth;
-        UIController.Instance.healthSlider.value = PlayerHealthController.Instance.currentHealth;
-        UIController.Instance.heathText.text = PlayerHealthController.Instance.currentHealth + " / " + PlayerHealthController.Instance.maxHealth;
+
+        PlayerController.Instance.I_Am("SpaceMan");
+        AbilityManager.Instance.shouldTurnOnSpacemanPassive = true;
+        AbilityManager.Instance.needResetSpaceMan = true;
+        AbilityManager.Instance.increaseHealthAmount = increaseHealthAmount;
+
         
         _powerLastCounter = powerLastTime;
         _powerCoolDownCounter = coolDownTime;
@@ -30,7 +40,10 @@ public class SpacemanPower : MonoBehaviour {
     }
 
     void Update() {
-        
+        SpaceManActive1();
+    }
+
+    public void SpaceManActive1() {
         if (Input.GetKeyDown(KeyCode.F)) {
             if (!_inPowerTime && !_inCoolDown) {
                 PlayerHealthController.Instance.MakeInvincible(powerLastTime);
@@ -57,10 +70,10 @@ public class SpacemanPower : MonoBehaviour {
                 _powerCoolDownCounter = coolDownTime;
                 _inCoolDown = false;
             }
-
         }
-
-        
-
+    }
+    
+    public void SpaceMan_Passive1(int amount) {
+        PlayerHealthController.Instance.IncreaseMaxHealth(amount);
     }
 }

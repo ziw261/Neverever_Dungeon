@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 7135988330611958427}
   - component: {fileID: 7135988330611958424}
   - component: {fileID: 7135988330611958425}
+  - component: {fileID: 3048040160360990995}
   m_Layer: 8
   m_Name: Player - Pirate
   m_TagString: Player
@@ -144,6 +145,18 @@ MonoBehaviour:
   dashInvincibility: 0.5
   availableGuns:
   - {fileID: 1352975177051355981}
+  isDevil: 0
+  damageExtraToAdd: 0
+  damageExtraToMultiply: 1
+  isCaveMan: 0
+  healAmountForCaveMan: 1
+  isThief: 0
+  itemDropRateToMultiply: 2
+  isLucha: 0
+  isNinja: 0
+  isPirate: 0
+  isSneaker: 0
+  isSpaceMan: 0
 --- !u!58 &7135988330611958427
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -200,6 +213,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3048040160360990995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7135988330611958420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e5405b17e37c144a909c2b88b53926c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7135988330658717386
 GameObject:
   m_ObjectHideFlags: 0

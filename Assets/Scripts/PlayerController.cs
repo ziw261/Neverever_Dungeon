@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Runtime.InteropServices.ComTypes;
@@ -30,9 +31,10 @@ public class PlayerController : MonoBehaviour {
     
     public List<Gun> availableGuns = new List<Gun>();
     private int _currentGun;
-    
-    
-    [HideInInspector]
+
+
+    [HideInInspector] 
+    public bool isDevil = false;
     public int damageExtraToAdd = 0;
     public float damageExtraToMultiply = 1;
 
@@ -41,11 +43,39 @@ public class PlayerController : MonoBehaviour {
     public int healAmountForCaveMan = 1;
 
     [HideInInspector] 
-    public bool isTheif = false;
+    public bool isThief = false;
     public int itemDropRateToMultiply = 2;
+
+
+    [HideInInspector]
+    public bool isLucha = false;
+
+
+    [HideInInspector] 
+    public bool isNinja = false;
+
+    
+    [HideInInspector] 
+    public bool isPirate = false;
+
+
+    [HideInInspector] 
+    public bool isSneaker = false;
+    
+    
+    [HideInInspector] 
+    public bool isSpaceMan = false;
     
     void Awake() {
         Instance = this;
+        isSpaceMan = false;
+        isDevil = false;
+        isLucha = false;
+        isNinja = false;
+        isPirate = false;
+        isSneaker = false;
+        isThief = false;
+        isCaveMan = false;
         
         DontDestroyOnLoad(gameObject);
     }    
@@ -53,9 +83,6 @@ public class PlayerController : MonoBehaviour {
     
     // Start is called before the first frame update
     void Start() {
-
-        isCaveMan = false;
-        isTheif = false;
         
         damageExtraToAdd = 0;
         damageExtraToMultiply = 1f;
@@ -207,5 +234,43 @@ public class PlayerController : MonoBehaviour {
 
     public int GetCurrentGun() {
         return _currentGun;
+    }
+
+
+    public void I_Am(String name) {
+        switch (name) {
+            case "SpaceMan":
+                isSpaceMan = true; isDevil = false; isLucha = false; isNinja = false;
+                isPirate = false; isSneaker = false; isThief = false; isCaveMan = false;
+                break;
+            case "Sneaker":
+                isSpaceMan = false; isDevil = false; isLucha = false; isNinja = false;
+                isPirate = false; isSneaker = true; isThief = false; isCaveMan = false;
+                break;
+            case "Devil":
+                isSpaceMan = false; isDevil = true; isLucha = false; isNinja = false;
+                isPirate = false; isSneaker = false; isThief = false; isCaveMan = false;
+                break;
+            case "Lucha":
+                isSpaceMan = false; isDevil = false; isLucha = true; isNinja = false;
+                isPirate = false; isSneaker = false; isThief = false; isCaveMan = false;
+                break;
+            case "Ninja":
+                isSpaceMan = false; isDevil = false; isLucha = false; isNinja = true;
+                isPirate = false; isSneaker = false; isThief = false; isCaveMan = false;
+                break;
+            case "Pirate":
+                isSpaceMan = false; isDevil = false; isLucha = false; isNinja = false;
+                isPirate = true; isSneaker = false; isThief = false; isCaveMan = false;
+                break;
+            case "Thief":
+                isSpaceMan = false; isDevil = false; isLucha = false; isNinja = false;
+                isPirate = false; isSneaker = false; isThief = true; isCaveMan = false;
+                break;
+            case "CaveMan":
+                isSpaceMan = false; isDevil = false; isLucha = false; isNinja = false;
+                isPirate = false; isSneaker = false; isThief = false; isCaveMan = true;
+                break;
+        }
     }
 }
